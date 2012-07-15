@@ -1,0 +1,23 @@
+{
+  "name": "christeredvartsen/sysinfo",
+  "type": "library",
+  "description": "SysInfo is a PHP library that can be used to fetch information about the system (CPU usage, Load avg., Memory usage +++)",
+  "keywords": ["sysinfo"],
+  "homepage": "https://github.com/christeredvartsen/sysinfo",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Christer Edvartsen",
+      "email": "cogo@starzinger.net"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.2"
+  },
+  "support": {
+    "issues": "https://github.com/christeredvartsen/sysinfo/issues"
+  },
+  "autoload": {
+    "psr-0": { "SysInfo": "src/" }
+  }
+}
