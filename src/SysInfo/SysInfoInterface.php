@@ -35,4 +35,9 @@ interface SysInfoInterface {
      * @return SysInfo\UptimeInterface
      */
     function getUptime();
+
+    /**
+     * @return SysInfo\DiskInterface
+     */
+    function getDisk();
 }

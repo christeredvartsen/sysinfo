@@ -57,4 +57,8 @@ abstract class PlatformTests extends \PHPUnit_Framework_TestCase {
     public function testGetUptime() {
         $this->assertInstanceOf('SysInfo\UptimeInterface', $this->platform->getUptime());
     }
+
+    public function testGetDisk() {
+        $this->assertInstanceOf('SysInfo\DiskInterface', $this->platform->getDisk());
+    }
 }

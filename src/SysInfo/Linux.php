@@ -45,4 +45,11 @@ class Linux implements SysInfoInterface {
     public function getUptime() {
         return new Linux\Uptime();
     }
+
+    /**
+     * @see SysInfo\SysInfoInterface::getDisk
+     */
+    public function getDisk() {
+        return new Linux\Disk();
+    }
 }

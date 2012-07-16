@@ -10,12 +10,17 @@ Usage
 -----
 ```php
 <?php
-$sysInfo = SysInfo\SysInfo::factory();
+$sysInfo = SysInfo\SysInfo::factory(); // automatically choose instance based on PHP_OS
 
-$cpu = $sysInfo->getCPU();
-$load = $sysInfo->getLoad();
-$uptime = $sysInfo->getUptime();
-$memory = $sysInfo->getMemory();
+// or
+
+$sysInfo = new SysInfo\Linux();
+
+$cpu = $sysInfo->getCPU(); // Fetch snapshot of CPU info
+$load = $sysInfo->getLoad(); // Fetch snapshot of Load info
+$uptime = $sysInfo->getUptime(); // Fetch snapshot of Uptime info
+$memory = $sysInfo->getMemory(); // Fetch snapshot of Memory info
+$disk = $sysInfo->getDisk(); // Fetch snapshot of Disk info
 ```
 
-See the CPUInterface.php, LoadInterface.php, UptimeInterface.php and MemoryInterface.php interfaces for more docs.
+See the CPUInterface.php, DiskInterface.php, LoadInterface.php, UptimeInterface.php and MemoryInterface.php interfaces for more docs.

@@ -14,6 +14,8 @@ namespace SysInfo;
 
 /**
  * Linux test case
+ *
+ * @covers SysInfo\Linux
  */
 class LinuxTest extends PlatformTests {
     /**
