@@ -18,6 +18,7 @@ namespace SysInfo;
 class SysInfoTest extends \PHPUnit_Framework_TestCase {
     /**
      * @expectedException RuntimeException
+     * @covers SysInfo\SysInfo::factory
      */
     public function testNonImplementedPlatform() {
         SysInfo::factory('Amiga');
@@ -40,6 +41,7 @@ class SysInfoTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @dataProvider getPlatformMapping
+     * @covers SysInfo\SysInfo::factory
      */
     public function testSupportedPlatforms($platform, $class) {
         $sysInfo = SysInfo::factory($platform);
@@ -48,6 +50,9 @@ class SysInfoTest extends \PHPUnit_Framework_TestCase {
         $this->assertInstanceOf($class, $sysInfo);
     }
 
+    /**
+     * @covers SysInfo\SysInfo::factory
+     */
     public function testCurrentPlatform() {
         $os = PHP_OS;
 
