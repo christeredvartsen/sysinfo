@@ -16,12 +16,33 @@ namespace SysInfo\Linux;
  * Test the CPU component
  */
 class CPUTest extends \PHPUnit_Framework_TestCase {
+    /**
+     * @covers SysInfo\Linux\CPU::__construct
+     * @covers SysInfo\Linux\CPU::getUsertime
+     * @covers SysInfo\Linux\CPU::getSystemtime
+     * @covers SysInfo\Linux\CPU::getIdletime
+     */
     public function testCPU() {
-        $cpu = new CPU('cpu  2579152 623 825419 43128163 305713 451 11807 0 0 0');
+        $cpu = new CPU(file_get_contents(FIXTURES_DIR . '/stat'));
 
-        $this->assertSame(2579152, $cpu->getUsertime());
-        $this->assertSame(623, $cpu->getUsertime(true));
-        $this->assertSame(825419, $cpu->getSystemtime());
-        $this->assertSame(43128163, $cpu->getIdletime());
+        $this->assertSame(12517, $cpu->getUsertime());
+        $this->assertSame(76, $cpu->getUsertime(true));
+        $this->assertSame(5828, $cpu->getSystemtime());
+        $this->assertSame(326633, $cpu->getIdletime());
+    }
+
+    /**
+     * @covers SysInfo\Linux\CPU::__construct
+     * @covers SysInfo\Linux\CPU::getUsertime
+     * @covers SysInfo\Linux\CPU::getSystemtime
+     * @covers SysInfo\Linux\CPU::getIdletime
+     */
+    public function testCPUWithSystemData() {
+        $cpu = new CPU();
+
+        $this->assertInternalType('int', $cpu->getUsertime());
+        $this->assertInternalType('int', $cpu->getUsertime(true));
+        $this->assertInternalType('int', $cpu->getSystemtime());
+        $this->assertInternalType('int', $cpu->getIdletime());
     }
 }

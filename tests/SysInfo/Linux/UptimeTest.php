@@ -16,10 +16,27 @@ namespace SysInfo\Linux;
  * Test the Uptime component
  */
 class UptimeTest extends \PHPUnit_Framework_TestCase {
+    /**
+     * @covers SysInfo\Linux\Uptime::__construct
+     * @covers SysInfo\Linux\Uptime::getUptime
+     * @covers SysInfo\Linux\Uptime::getIdletime
+     */
     public function testUptime() {
-        $uptime = new Uptime('232626.14 427950.77');
+        $uptime = new Uptime(file_get_contents(FIXTURES_DIR . '/uptime'));
 
-        $this->assertSame(232626, $uptime->getUptime());
-        $this->assertSame(427950, $uptime->getIdletime());
+        $this->assertSame(1787, $uptime->getUptime());
+        $this->assertSame(3292, $uptime->getIdletime());
+    }
+
+    /**
+     * @covers SysInfo\Linux\Uptime::__construct
+     * @covers SysInfo\Linux\Uptime::getUptime
+     * @covers SysInfo\Linux\Uptime::getIdletime
+     */
+    public function testUptimeWithSystemData() {
+        $uptime = new Uptime();
+
+        $this->assertInternalType('int', $uptime->getUptime());
+        $this->assertInternalType('int', $uptime->getIdletime());
     }
 }
