@@ -68,7 +68,11 @@ task :test do
       exit 1
     end
   else
-    puts "phpunit.xml does not exist"
-    exit 1
+    puts "Using phpunit.xml.dist"
+    begin
+      sh %{phpunit --verbose -c phpunit.xml.dist}
+    rescue Exception
+      exit 1
+    end
   end
 end
