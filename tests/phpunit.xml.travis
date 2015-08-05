@@ -6,7 +6,6 @@
     </testsuite>
   </testsuites>
   <php>
-    <includePath>./tests</includePath>
-    <const name="FIXTURES_DIR" value="fixtures" />
+    <const name="FIXTURES_DIR" value="tests/fixtures" />
   </php>
 </phpunit>

@@ -11,7 +11,6 @@
     <log type="junit" target="build/logs/junit.xml" logIncompleteSkipped="false" />
   </logging>
   <php>
-    <includePath>./tests</includePath>
     <const name="FIXTURES_DIR" value="tests/fixtures" />
   </php>
   <listeners>
