@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="false" bootstrap="bootstrap.php">
+  <testsuites>
+    <testsuite name="Sysinfo test suite">
+      <directory>SysInfo</directory>
+    </testsuite>
+  </testsuites>
+  <php>
+    <const name="FIXTURES_DIR" value="fixtures" />
+  </php>
+</phpunit>

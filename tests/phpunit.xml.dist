@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit colors="true" bootstrap="tests/bootstrap.php">
+<phpunit colors="true" bootstrap="bootstrap.php">
   <testsuites>
     <testsuite name="Sysinfo test suite">
-      <directory>tests/SysInfo</directory>
+      <directory>SysInfo</directory>
     </testsuite>
   </testsuites>
   <logging>
@@ -14,6 +14,14 @@
     <includePath>./tests</includePath>
     <const name="FIXTURES_DIR" value="tests/fixtures" />
   </php>
+  <listeners>
+    <listener class="SysInfo\TestListener\SysInfoListener" file="listeners/SysInfo/TestListener/SysInfoListener.php">
+      <arguments>
+        <!-- Log dir -->
+        <string>build/logs</string>
+      </arguments>
+    </listener>
+  </listeners>
   <filter>
     <whitelist addUncoveredFilesFromWhitelist="true">
       <directory suffix=".php">src</directory>
