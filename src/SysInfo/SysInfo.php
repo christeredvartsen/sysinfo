@@ -31,7 +31,7 @@ class SysInfo {
     /**
      * @param string $os Optional forces OS. Defaults to PHP_OS
      * @throws RuntimeException
-     * @return SysInfo\SysInfoInterface
+     * @return SysInfoInterface
      */
     static public function factory($os = null) {
         if (!$os) {

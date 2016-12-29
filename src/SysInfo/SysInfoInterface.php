@@ -17,27 +17,27 @@ namespace SysInfo;
  */
 interface SysInfoInterface {
     /**
-     * @return SysInfo\CPUInterface
+     * @return CPUInterface
      */
     function getCPU();
 
     /**
-     * @return SysInfo\MemoryInterface
+     * @return MemoryInterface
      */
     function getMemory();
 
     /**
-     * @return SysInfo\LoadInterface
+     * @return LoadInterface
      */
     function getLoad();
 
     /**
-     * @return SysInfo\UptimeInterface
+     * @return UptimeInterface
      */
     function getUptime();
 
     /**
-     * @return SysInfo\DiskInterface
+     * @return DiskInterface
      */
     function getDisk();
 }

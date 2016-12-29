@@ -12,44 +12,44 @@
 
 namespace SysInfo;
 
-use SysInfo\Linux;
+use SysInfo\Linux as OS;
 
 /**
  * Linux sysinfo
  */
 class Linux implements SysInfoInterface {
     /**
-     * @see SysInfo\SysInfoInterface::getCPU
+     * @see SysInfoInterface::getCPU
      */
     public function getCPU() {
-        return new Linux\CPU();
+        return new OS\CPU();
     }
 
     /**
-     * @see SysInfo\SysInfoInterface::getMemory
+     * @see SysInfoInterface::getMemory
      */
     public function getMemory() {
-        return new Linux\Memory();
+        return new OS\Memory();
     }
 
     /**
-     * @see SysInfo\SysInfoInterface::getLoad
+     * @see SysInfoInterface::getLoad
      */
     public function getLoad() {
-        return new Linux\Load();
+        return new OS\Load();
     }
 
     /**
-     * @see SysInfo\SysInfoInterface::getUptime
+     * @see SysInfoInterface::getUptime
      */
     public function getUptime() {
-        return new Linux\Uptime();
+        return new OS\Uptime();
     }
 
     /**
-     * @see SysInfo\SysInfoInterface::getDisk
+     * @see SysInfoInterface::getDisk
      */
     public function getDisk() {
-        return new Linux\Disk();
+        return new OS\Disk();
     }
 }
